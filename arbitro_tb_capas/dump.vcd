@@ -1,0 +1,58 @@
+$date
+	Sun Oct  4 19:39:33 2015
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_top $end
+$var wire 1 ! clock $end
+$var wire 1 " gnt0 $end
+$var wire 1 # gnt1 $end
+$var wire 1 $ req0 $end
+$var wire 1 % req1 $end
+$var wire 1 & reset $end
+$scope module clock $end
+$var reg 1 ' clock $end
+$upscope $end
+$scope module tb $end
+$var wire 1 ! clk $end
+$var wire 1 " gnt0 $end
+$var wire 1 # gnt1 $end
+$var reg 1 ( req0 $end
+$var reg 1 ) req1 $end
+$var reg 1 * reset $end
+$scope task checker $end
+$upscope $end
+$scope task drv_init $end
+$upscope $end
+$scope task drv_request $end
+$upscope $end
+$scope task monitor $end
+$var reg 1 + mon_gnt0 $end
+$var reg 1 , mon_gnt1 $end
+$upscope $end
+$scope task scoreboard $end
+$var reg 1 - sb_gnt0 $end
+$var reg 1 . sb_gnt1 $end
+$upscope $end
+$upscope $end
+$scope module dut $end
+$var wire 1 ! clock $end
+$var wire 1 $ req_0 $end
+$var wire 1 % req_1 $end
+$var wire 1 & reset $end
+$var reg 1 / gnt_0 $end
+$var reg 1 0 gnt_1 $end
+$var reg 3 1 next_state [2:0] $end
+$var reg 3 2 state [2:0] $end
+$scope begin FSM_COMBO $end
+$upscope $end
+$scope begin FSM_SEQ $end
+$upscope $end
+$scope begin OUTPUT_LOGIC $end
+$upscope $end
+$upscope $end
+$upscope $end
