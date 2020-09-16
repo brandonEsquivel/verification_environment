@@ -31,11 +31,14 @@ reg [1:0] MODO;
       end else begin
       if(ENABLE) begin
           case ({MODO})
-            2'b00: { if(D > 11  /*4'b1011*/ ) begin sb_RCO <= 1; end sb_Q <= sb_D + 3; sb_LOAD <= 0; }
-            2'b01: { if(D == 0  /*4'b0000*/ ) begin sb_RCO <= 1; end sb_Q <= sb_D - 1; sb_LOAD <= 0;}
-            2'b10: { if(D == 15 /*4'b1111*/ ) begin sb_RCO <= 1; end sb_Q <= sb_D + 1; sb_LOAD <= 0;}
-            2'b11: { sb_RCO <= 0;  sb_Q <= sb_D; sb_LOAD <= 1;}
-            default: {sb_RCO <= 0; sb_Q <= sb_D; sb_LOAD <= 0;}
+            2'b00: if(D > 11  /*4'b1011*/ ) begin
+               sb_RCO <= 1'b1; end
+               sb_Q <= sb_D + 4'b0011;
+               sb_LOAD <= 0;
+            2'b01: if(D == 4'b0000  /*4'b0000*/ ) begin sb_RCO <=  1'b1; end sb_Q <= sb_D - 4'b0001; sb_LOAD <= 0;
+            2'b10: if(D == 15 /*4'b1111*/ ) begin sb_RCO <=  1'b1; end sb_Q <= sb_D + 4'b0001; sb_LOAD <= 0;
+            2'b11: sb_RCO <= 0;  sb_Q <= sb_D; sb_LOAD <= 1;
+            default: sb_RCO <= 0; sb_Q <= sb_D; sb_LOAD <= 0;
           endcase
         end
         else begin  // ENABLE == 0 & RESET == 0

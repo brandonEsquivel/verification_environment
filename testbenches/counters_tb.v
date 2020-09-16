@@ -1,19 +1,21 @@
 // Testbench Code Goes here
 `include "./src/scoreboard.v"
 
-module counters_tb();
+module counters_tb(
 
-input wire [3:0] Q;
-input wire RCO, LOAD, clk;
+input wire [3:0] Q,
+input wire RCO, LOAD, clk,
 
 // from scoreboard
-output reg [3:0] sb_Q;
-output reg sb_RCO, sb_LOAD;
+output reg [3:0] sb_Q,
+output reg sb_RCO, sb_LOAD,
 
 // Generated signals
-output reg RESET, ENABLE;
-output reg [3:0] D;
-output reg [1:0] MODO;
+output reg RESET, ENABLE,
+output reg [3:0] D,
+output reg [1:0] MODO
+)
+
 
 `include "./testers/driver.v"
 `include "./src/checker.v"

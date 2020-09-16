@@ -1,5 +1,5 @@
 //Scoreboard
-module scoreboard (req0, req1, clk) ;
+module scoreboard (req0, req1, clk);
 
 input  req0, req1, clk;
 
