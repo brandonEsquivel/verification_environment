@@ -12,3 +12,6 @@ run  $make v_tb  to compile the testbench.
 
 run  $make run   for simulation and test.
 
+To select the contador<x>.v un-comment the instance in top_tb.v to test
+  
+
