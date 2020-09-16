@@ -15,7 +15,7 @@ task drv_request;
 
 input integer iteration;
 
-  repeat (iteration) begin  
+  repeat (iteration) begin
     @(negedge clk) begin
         req0 = $random;
         req1 = $random;

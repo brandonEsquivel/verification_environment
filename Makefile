@@ -1,24 +1,17 @@
 #Verilog
 
-# Making verilog makefile 
+# Making verilog makefile
 # Makefile to simulate Verilog HDL designs under GNU.
-###  		Brandon Esquivel Molina
-######## 	brandon.esquivel@ucr.ac.cr.com
+# Brandon Esquivel Molina
+# brandon.esquivel@ucr.ac.cr.com
 
 
 # 	Makefile logic: this is a specific version of a very general makefile for synthesis, compilation and simulation.
 # To create this file you need these files:   -- checker.v clock.v contador<X>.v counters_tb.v driver.v scoreboard.v top_tb.v
-# $ @ replace left
-# $ ^ right
-
-
-#******************************************************************************
-#													MARKS
-#******************************************************************************
 
 #if you feel lazy, just make all.
 
-all:	clean  
+all:	clean v_tb gtkwave
 
 #******************************************************************************
 #										TARGETS
@@ -35,12 +28,6 @@ all:	clean
 # is to model a synchronous digital circuit in terms of digital signal
 # flow (this being data) relating it to the hardware registers and the
 # logical operations that are carried out in each signal.
-
-
-### 						SED	(for synth)			use $make	r<mark>
-# Replaces on the synthesized file the name module,
-# because for making the stuctural decription we use the
-# behavioral on yosys
 
 #### 					 IVERILOG 		use $make v<mark>
 # It is defined as an HDL (Hardware Description Language),
@@ -119,14 +106,20 @@ v_tb:
 
 #target phony
 .PHONY: gtkwavetest
-gtkwavetest:
-	gtkwave $(_VCD_FSM_MUX) config.gtkw
+gtkwave:
+	gtkwave $(_VCD_TEST) config.gtkw
 
+gtkwaveA:
+	gtkwave $(_VCD_TEST) configA.gtkw
 
+gtkwaveB:
+	gtkwave $(_VCD_TEST) configB.gtkw
 
+gtkwaveC:
+	gtkwave $(_VCD_TEST) configC.gtkw
 
 #******************************************************************************
-############ CLEAN FOR ALL
+# CLEAN  ALL
 #******************************************************************************
 
 

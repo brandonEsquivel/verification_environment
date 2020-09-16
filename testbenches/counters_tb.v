@@ -14,7 +14,7 @@ output reg sb_RCO, sb_LOAD,
 output reg RESET, ENABLE,
 output reg [3:0] D,
 output reg [1:0] MODO
-)
+);
 
 
 `include "./testers/driver.v"

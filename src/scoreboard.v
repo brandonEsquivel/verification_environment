@@ -29,16 +29,57 @@ reg [1:0] MODO;
       sb_LOAD <= 0;
       sb_RCO <= 0;
       end else begin
-      if(ENABLE) begin
+        if(ENABLE) begin
+
           case ({MODO})
-            2'b00: if(D > 11  /*4'b1011*/ ) begin
-               sb_RCO <= 1'b1; end
-               sb_Q <= sb_D + 4'b0011;
-               sb_LOAD <= 0;
-            2'b01: if(D == 4'b0000  /*4'b0000*/ ) begin sb_RCO <=  1'b1; end sb_Q <= sb_D - 4'b0001; sb_LOAD <= 0;
-            2'b10: if(D == 15 /*4'b1111*/ ) begin sb_RCO <=  1'b1; end sb_Q <= sb_D + 4'b0001; sb_LOAD <= 0;
-            2'b11: sb_RCO <= 0;  sb_Q <= sb_D; sb_LOAD <= 1;
-            default: sb_RCO <= 0; sb_Q <= sb_D; sb_LOAD <= 0;
+            2'b00: begin
+              if(sb_Q == 15 || sb_Q >=13 /*4'b1011*/ ) begin
+                sb_RCO <= 1'b1;
+                sb_Q <= sb_Q[3:0] + 4'b0011;
+                sb_LOAD <= 0;
+              end else begin
+                sb_Q <= sb_Q[3:0] + 4'b0011;
+                sb_LOAD <= 0;
+                sb_RCO <= 1'b0;
+              end
+            end
+
+            2'b01: begin
+                if(sb_Q == 4'b0000 ) begin
+                  sb_RCO <=  1'b1;
+                  sb_Q <= sb_Q[3:0] - 4'b0001;
+                  sb_LOAD <= 0;
+                end else begin
+                  sb_Q <= sb_Q[3:0] - 4'b0001;
+                  sb_LOAD <= 0;
+                  sb_RCO <=  1'b0;
+                end
+            end
+
+            2'b10: begin
+                if(sb_Q == 4'b1111 ) begin
+                  sb_RCO <=  1'b1;
+                  sb_Q <= sb_Q[3:0] + 4'b0001;
+                  sb_LOAD <= 0;
+                end else begin
+                  sb_Q <= sb_Q[3:0] + 4'b0001;
+                  sb_LOAD <= 0;
+                  sb_RCO <=  1'b0;
+                end
+            end
+
+            2'b11: begin
+              sb_RCO <= 0;
+              sb_Q <= sb_D;
+              sb_LOAD <= 1;
+            end
+
+            default: begin
+              sb_RCO <= 0;
+              sb_Q <= 0;
+              sb_LOAD <= 0;
+            end
+
           endcase
         end
         else begin  // ENABLE == 0 & RESET == 0

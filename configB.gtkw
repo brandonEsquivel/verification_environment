@@ -1,0 +1,68 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Wed Sep 16 21:46:17 2020
+[*]
+[dumpfile] "/home/bran/Documentos/repositories/verification_environment/test.vcd"
+[dumpfile_mtime] "Wed Sep 16 21:13:13 2020"
+[dumpfile_size] 81607
+[savefile] "/home/bran/Documentos/repositories/verification_environment/configB.gtkw"
+[timestart] 27
+[size] 1853 859
+[pos] -1 -1
+*-4.326616 128 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_top.
+[treeopen] tb_top.tb.
+[sst_width] 223
+[signals_width] 186
+[sst_expanded] 1
+[sst_vpaned_height] 244
+@28
+tb_top.tb.clk
+@200
+-
+-SCOREBOARD
+-DUV
+@28
+tb_top.tb.sb.ENABLE
+tb_top.dutB.enable
+@200
+-
+@28
+tb_top.tb.sb.RESET
+tb_top.dutB.reset
+@200
+-
+@28
+tb_top.tb.sb.sb_MODO[1:0]
+tb_top.dutB.mode[1:0]
+@200
+-
+@24
+tb_top.tb.sb.sb_D[3:0]
+tb_top.dutB.D[3:0]
+@200
+-
+-outputs
+@24
+tb_top.tb.sb.sb_Q[3:0]
+tb_top.dutB.Q[3:0]
+@200
+-
+@24
+tb_top.tb.sb.sb_LOAD
+@29
+tb_top.dutB.load
+@200
+-
+@24
+tb_top.tb.sb.sb_RCO
+@28
+tb_top.dutB.rco
+@200
+-
+-
+-
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0
