@@ -5,11 +5,8 @@ Implementation of a specific verification environment for three modules called c
 # UCR
 
 # How to run:
-run 
 
-´´$make all´´
-
-for the complete process
-run ´´$make v_tb´´  to compile the testbench
-run ´´$make run´´  for simulation and test
+run  $make all   for the complete process
+run  $make v_tb  to compile the testbench
+run  $make run   for simulation and test
 
