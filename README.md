@@ -10,7 +10,7 @@ run  $make all   for the complete process.
 
 run  $make v_tb  to compile the testbench.
 
-run  $make run   for simulation and test.
+run  $make gtkwave'X'  for simulation and test.
 
 To select the contador"X".v un-comment the instance in top_tb.v to test
  
