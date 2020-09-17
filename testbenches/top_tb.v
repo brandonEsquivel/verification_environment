@@ -34,6 +34,9 @@ counters_tb tb(
 .LOAD       (LOAD),
 .clk        (clock)
 );
+
+// un-Comment this instances to test the module you need
+
 /*
 counterA dutA (
 .clk        (clock),
@@ -44,9 +47,9 @@ counterA dutA (
 .load       (LOAD),
 .rco        (RCO),
 .Q          (Q)
-);*/
+);
 
-/*
+
 counterB dutB (
 .clk        (clock),
 .reset      (RESET),
@@ -57,8 +60,8 @@ counterB dutB (
 .rco        (RCO),
 .Q          (Q)
 );
-
 */
+
 counterC dutC (
 .clk        (clock),
 .reset      (RESET),
@@ -69,6 +72,7 @@ counterC dutC (
 .rco        (RCO),
 .Q          (Q)
 );
+
 
 endmodule
 

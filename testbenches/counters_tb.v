@@ -45,6 +45,10 @@ initial begin
     drv_MODO_request(ITERATIONS);
     checker(ITERATIONS);
   join
+    RESET <= 1;     // TESTING reset 
+    ENABLE <= 1;
+    drv_RESET2_request(ITERATIONS);
+
   $fdisplay(log, "time=%5d, MODO Test Completed", $time);
   $fdisplay(log, "time=%5d, Simulation Completed", $time);
 

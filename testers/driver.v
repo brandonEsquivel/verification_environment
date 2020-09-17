@@ -14,12 +14,45 @@ task drv_init;
   end
 endtask
 
+
+//Drive controled sum request
+task drv_RESET_request;
+
+input integer iteration;
+  begin
+    MODO = 2'b11;   // start at counter  charge
+    D <= 4'b0000;   // init D at 0
+    ENABLE <= 1;    // init ENABLE at 1;
+    repeat (iteration) begin
+
+      @(negedge clk) begin
+        D <= D + 1;       // feedback
+        if(MODO==3) begin
+          MODO <= MODO + 3;   // modo 10
+        end
+      end
+    end
+    RESET <= 1;
+    ENABLE <= 1;
+
+    @(negedge clk) begin
+      D <= D + 1;
+    end
+    @(negedge clk) begin
+      D <= D + 1;
+    end
+  end
+endtask
+
+
+
+
 //Drive controled sum request
 task drv_MODO_request;
 
 input integer iteration;
   begin
-    MODO = 2'b11;   // start at counter  Q + 3
+    MODO = 2'b11;   // start at counter  charge
     D <= 4'b0000;   // init D at 0
     ENABLE <= 1;    // init ENABLE at 1;
     repeat (iteration) begin
@@ -113,6 +146,32 @@ input integer iteration;
   end
 endtask
 
+
+
+//Drive controled sum request
+task drv_RESET2_request;
+
+input integer iteration;
+  begin
+    D <= 4'b0000;   // init D at 0
+    ENABLE <= 1;    // init ENABLE at 1;
+    repeat (iteration) begin
+
+      @(negedge clk) begin
+        D <= D + 1;       // feedback
+      end
+    end
+    RESET <= 1;
+    ENABLE <= 1;
+
+    @(negedge clk) begin
+      D <= D + 1;
+    end
+    @(negedge clk) begin
+      D <= D + 1;
+    end
+  end
+endtask
 
 /*Tasks are used in most of the programming languages, known
 commonly as procedures or subroutines. Tasks are intended to

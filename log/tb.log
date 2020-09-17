@@ -102,14 +102,14 @@ PASS ALL
 PASS ALL
 PASS ALL
 PASS ALL
-time= 1040, MODO Test Completed
-time= 1040, Simulation Completed
-time= 1040, Starting Reset
-time= 1080, Reset Completed
-time= 1080, Starting Random Test
-Time=1085 Error! DUV: Q=15, RCO=1, LOAD=0, scoreboard: sb_Q= z, sb_RCO=0, sb_LOAD=0
-Time=1095 Error! DUV: Q= 2, RCO=1, LOAD=0, scoreboard: sb_Q= x, sb_RCO=0, sb_LOAD=0
-Time=1105 Error! DUV: Q= 1, RCO=0, LOAD=0, scoreboard: sb_Q= x, sb_RCO=0, sb_LOAD=0
+time= 2060, MODO Test Completed
+time= 2060, Simulation Completed
+time= 2060, Starting Reset
+time= 2100, Reset Completed
+time= 2100, Starting Random Test
+Time=2105 Error! DUV: Q=15, RCO=1, LOAD=0, scoreboard: sb_Q= z, sb_RCO=0, sb_LOAD=0
+Time=2115 Error! DUV: Q= 2, RCO=1, LOAD=0, scoreboard: sb_Q= x, sb_RCO=0, sb_LOAD=0
+Time=2125 Error! DUV: Q= 1, RCO=0, LOAD=0, scoreboard: sb_Q= x, sb_RCO=0, sb_LOAD=0
 PASS ALL
 PASS ALL
 PASS ALL
@@ -207,5 +207,5 @@ PASS ALL
 PASS ALL
 PASS ALL
 PASS ALL
-time= 2080, MODO Test Completed
-time= 2080, Simulation Completed
+time= 3100, MODO Test Completed
+time= 3100, Simulation Completed
