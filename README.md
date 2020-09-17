@@ -10,5 +10,9 @@ run  $make all   for the complete process.
 
 run  $make v_tb  to compile the testbench.
 
-run  $make run   for simulation and test.
+run  $make gtkwave'X'  for simulation and test.
 
+To select the contador"X".v un-comment the instance in top_tb.v to test
+ 
+You can choose the test or task in counters_tb.v at lines 45 and 59. Just add 00, 01, 10 or 11 after MODE in the name of the task to execute.
+A general test of all modes and a random test are set by default.
